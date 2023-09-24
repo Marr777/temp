@@ -1,23 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import { Title } from './components/heading';
+import { PetTitle } from './components/title';
+import { RenderCard } from './components/petImg';
+import { PetDescription } from './components/petDescription';
 
-function App() {
+function App({page, card}) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <section>
+        <Title>{page.title}</Title>
+        <div>
+          <PetTitle>{card.name}</PetTitle>
+          <RenderCard>{card.img}</RenderCard>
+          <PetDescription>{card.description}</PetDescription>
+        </div>
+      </section>
     </div>
   );
 }
